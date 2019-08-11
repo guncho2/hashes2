@@ -97,3 +97,10 @@ class OpenAddressing
     end
   end 
 end
+hash = OpenAddressing.new(12)
+hash['Eduardo'] = 'guncho'
+hash['Wanceslao'] = 'carlos'
+hash['Mario'] = 'daniel'
+hash['Alejandro'] = 'Jonathan'
+hash.print
+

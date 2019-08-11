@@ -74,9 +74,21 @@ class SeparateChaining
 
   def print
     for i in 0..self.size-1
-      if !@lists[i].nil?
-        @lists[i].print(i)
+    if !@lists[i].nil? 
+       puts @lists[i]
+    else puts "-"
       end
     end
   end
+
 end
+hash = SeparateChaining.new(12)
+hash['Eduardo'] = 'guncho'
+hash['Wanceslao'] = 'carlos'
+hash['Mario'] = 'daniel'
+hash['Alejandro'] = 'Jonathan'
+hash.print
+
+# hubo collision y se integro a los linkeed list solamente 2 con 12 hashes
+# con 48 hashes los values estan completos 4 y se integraron al linked_list
+

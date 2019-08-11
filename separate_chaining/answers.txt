@@ -1,0 +1,249 @@
+With 48 positions hashes  available values are 4 like the example and there are not collisions going the hashes to the linked linked_list
+With 12 hashes values are 2 like the example and there are  collisions going the hashes to the linked linked_list
+
+With 48 posiosions:
+
+hash = SeparateChaining.new(48)
+hash['Eduardo'] = 'guncho'
+hash['Wanceslao'] = 'carlos'
+hash['Mario'] = 'daniel'
+hash['Alejandro'] = 'Jonathan'
+hash.print
+
+eduardos-MBP:separate_chaining eduardolowensohn$ ruby separate_chaining.rb
+#<LinkedList:0x00007f9549900930>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+#<LinkedList:0x00007f9549900db8>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+#<LinkedList:0x00007f9549900c00>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+#<LinkedList:0x00007f9549900f48>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+With 12 positions:
+
+hash = SeparateChaining.new(12)
+hash['Eduardo'] = 'guncho'
+hash['Wanceslao'] = 'carlos'
+hash['Mario'] = 'daniel'
+hash['Alejandro'] = 'Jonathan'
+hash.print
+
+eduardos-MBP:separate_chaining eduardolowensohn$ ruby separate_chaining.rb
+#<LinkedList:0x00007fd2ee969060>
+#<LinkedList:0x00007fd2ee968ed0>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+eduardos-MBP:separate_chaining eduardolowensohn$ 
+
+
+eduardos-MBP:separate_chaining eduardolowensohn$ ruby print.rb
+#<LinkedList:0x00007fe4e183e078>
+#<LinkedList:0x00007fe4e183dec0>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+insert hash { "Star Wars: The Phantom Menace", "Number One" }
+#<LinkedList:0x00007fe4e183cfc0>
+-
+-
+-
+-
+-
+load factor: 0.16666666666666666
+
+insert hash { "Star Wars: Attack of the Clones", "Number Two" }
+#<LinkedList:0x00007fe4e183cfc0>
+-
+-
+#<LinkedList:0x00007fe4e183c958>
+-
+-
+load factor: 0.3333333333333333
+
+insert hash { "Star Wars: Revenge of the Sith", "Number Three" }
+#<LinkedList:0x00007fe4e183cfc0>
+-
+-
+#<LinkedList:0x00007fe4e183c958>
+-
+#<LinkedList:0x00007fe4e183c318>
+load factor: 0.5
+
+insert hash { "Star Wars: A New Hope", "Number Four" }
+#<LinkedList:0x00007fe4e183cfc0>
+-
+-
+#<LinkedList:0x00007fe4e183c958>
+#<LinkedList:0x00007fe4e1837d18>
+#<LinkedList:0x00007fe4e183c318>
+load factor: 0.6666666666666666
+
+insert hash { "Star Wars: The Empire Strikes Back", "Number Five" }
+-
+-
+#<LinkedList:0x00007fe4e1837458>
+#<LinkedList:0x00007fe4e1837390>
+#<LinkedList:0x00007fe4e18372c8>
+-
+#<LinkedList:0x00007fe4e1837548>
+-
+-
+-
+-
+#<LinkedList:0x00007fe4e1837200>
+load factor: 0.4166666666666667
+
+insert hash { "Star Wars: Return of the Jedi", "Number Six" }
+-
+-
+#<LinkedList:0x00007fe4e1837458>
+#<LinkedList:0x00007fe4e1837390>
+#<LinkedList:0x00007fe4e18372c8>
+-
+#<LinkedList:0x00007fe4e1837548>
+-
+-
+-
+-
+#<LinkedList:0x00007fe4e1837200>
+load factor: 0.5
+
+
+
+
+
+
+
+
+eduardos-MBP:separate_chaining eduardolowensohn$ ruby print.rb
+insert hash { "Star Wars: The Phantom Menace", "Number One" }
+#<LinkedList:0x00007fe5c5876628>
+-
+-
+-
+-
+-
+load factor: 0.16666666666666666
+
+insert hash { "Star Wars: Attack of the Clones", "Number Two" }
+#<LinkedList:0x00007fe5c5876628>
+-
+-
+#<LinkedList:0x00007fe5c5875e08>
+-
+-
+load factor: 0.3333333333333333
+
+insert hash { "Star Wars: Revenge of the Sith", "Number Three" }
+#<LinkedList:0x00007fe5c5876628>
+-
+-
+#<LinkedList:0x00007fe5c5875e08>
+-
+#<LinkedList:0x00007fe5c5875778>
+load factor: 0.5
+
+insert hash { "Star Wars: A New Hope", "Number Four" }
+#<LinkedList:0x00007fe5c5876628>
+-
+-
+#<LinkedList:0x00007fe5c5875e08>
+#<LinkedList:0x00007fe5c58750c0>
+#<LinkedList:0x00007fe5c5875778>
+load factor: 0.6666666666666666
+
+insert hash { "Star Wars: The Empire Strikes Back", "Number Five" }
+-
+-
+#<LinkedList:0x00007fe5c5874738>
+#<LinkedList:0x00007fe5c5874620>
+#<LinkedList:0x00007fe5c5874508>
+-
+#<LinkedList:0x00007fe5c5874828>
+-
+-
+-
+-
+#<LinkedList:0x00007fe5c5874418>
+load factor: 0.4166666666666667
+
+insert hash { "Star Wars: Return of the Jedi", "Number Six" }
+-
+-
+#<LinkedList:0x00007fe5c5874738>
+#<LinkedList:0x00007fe5c5874620>
+#<LinkedList:0x00007fe5c5874508>
+-
+#<LinkedList:0x00007fe5c5874828>
+-
+-
+-
+-
+#<LinkedList:0x00007fe5c5874418>
+load factor: 0.5
+
+
+
+
+Answers: 
+
+Cuckoo Hashing is a form of Open Addressing where the hash calculates two indexes 
+using two disparate hashing functions. If the first index results in a collision, 
+it will use the other hashing function to generate a new hash code and place the 
+entry at its alternative index.
+
